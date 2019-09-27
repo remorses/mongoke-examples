@@ -1,0 +1,5 @@
+
+
+EventWindow:
+    timestamp: 0..60000000
+    count: Int

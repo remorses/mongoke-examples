@@ -1,0 +1,19 @@
+
+version: '3'
+
+services:
+    api:
+        ports:
+            - 8090:80
+        image: mongoke/mongoke
+        command: /conf.yml
+        volumes: 
+            - ./${config}:/conf.yml
+            - ./domain.skema:/domain.skema
+    mongo:
+        ports:
+            - 27017:27017
+        image: mongo
+        logging: 
+            driver: none
+
