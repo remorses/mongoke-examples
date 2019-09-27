@@ -18,11 +18,14 @@ async def main(config, url, custom_resolvers={}):
         schema = get_skema(config)
         for typename, config in config['types'].items():
             collection = config['collection']
-            items = skema.fake_data(schema, ref=typename, amount=10, resolvers=custom_resolvers)
+            items = skema.fake_data(schema, ref=typename, amount=100, resolvers=custom_resolvers)
             # print(dir(db[collection]))
             collection: Collection = db[collection]
             print(f'persisting {len(items)} documents in {collection.name} in db {collection.database.name}')
-            await collection.insert_many(items,)
+            for i in range(len(items) // 20):
+                j = i*20
+                if j+20 < len(items):
+                    await collection.insert_many(items[j: j+20])
 
 
 def cli(config_path, db,):

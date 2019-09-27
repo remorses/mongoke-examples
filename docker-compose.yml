@@ -5,8 +5,10 @@ services:
     api:
         ports:
             - 8090:80
-        image: mongoke/mongoke
+        image: mongoke/mongoke:latest
         command: /conf.yml
+        environment: 
+            - PYTHONUNBUFFERED=1
         volumes: 
             - ./${config}:/conf.yml
             - ./domain.skema:/domain.skema

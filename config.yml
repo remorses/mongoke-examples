@@ -14,7 +14,7 @@ types:
                     _id:
                         $subtract:
                             - $timestamp
-                            - $mod: [$timestamp, 60000] # minute 60 * 1000
+                            - $mod: [$timestamp, 600] # minute 60 * 1000
                     count:
                         $sum: 1
             -   $project:

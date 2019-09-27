@@ -1,0 +1,4 @@
+type EventWindow {
+    timestamp: Float
+    count: Int
+}
