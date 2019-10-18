@@ -1,0 +1,30 @@
+# ./mongoke.yml
+
+skema_path: ./schema.skema
+
+
+types:
+    Zoo:
+        collection: zoos
+    Animal:
+        collection: animals
+    Tiger:
+        collection: animals
+        exposed: false
+    Bear:
+        collection: animals
+        exposed: false
+    Panthera:
+        collection: animals
+        exposed: false
+   
+
+
+relations:
+    -   field: animals
+        from: Zoo
+        to: Animal
+        relation_type: to_many
+        where:
+            _id: 
+                $in: ${{ parent['animal_ids'] }}

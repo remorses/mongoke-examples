@@ -1,0 +1,20 @@
+Zoo:
+    _id: ObjectId
+    address: Address
+    animal_ids: [ObjectId]
+
+Animal: Tiger | Bear | Panthera
+
+Panthera:
+    _id: ObjectId
+    black_nuance: "super_dark" | "dark" | "light"
+
+Tiger:
+    _id: ObjectId
+    humans_killed: Int
+
+Bear:
+    _id: ObjectId
+    likes_honey: Bool
+
+Address: Str
