@@ -1,2 +1,2 @@
 
-Execute `docker-compose up` to get started
+Execute `docker-compose up` to run the database, fill it with fake data via `mongoke/populate-mongo` and generate the graphql mongoke service then open graphiql at [`http://localhost:8090/graphiql`](http://localhost:8090/graphiql)

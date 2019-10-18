@@ -1,0 +1,20 @@
+Store:
+    _id: ObjectId
+    url: Url
+    seller_id: ObjectId
+    product_ids: [ObjectId]
+
+Seller:
+    _id: ObjectId
+    email: Email
+
+Product:
+    _id: ObjectId
+    title: Str
+    tags: [
+        name: Str
+        code: Str
+    ]
+
+Url: Str
+Email: Str
