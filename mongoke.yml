@@ -7,6 +7,7 @@ skema: |
     BlogPost:
         _id: ObjectId
         author_id: ObjectId
+        title: Str
         content: Str
 
 types:
@@ -14,10 +15,11 @@ types:
         collection: users
     BlogPost:
         collection: posts
+
 relations:
     -   field: posts
         from: User
         to: BlogPost
         relation_type: to_many
-        where: {}
-            # author_id: ${{ parent['_id'] }}
+        where:
+            author_id: ${{ parent['_id'] }}
