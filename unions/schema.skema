@@ -7,14 +7,17 @@ Animal: Tiger | Bear | Panthera
 
 Panthera:
     _id: ObjectId
+    animal_type: "panthera"
     black_nuance: "super_dark" | "dark" | "light"
 
 Tiger:
     _id: ObjectId
+    animal_type: "tiger"
     humans_killed: Int
 
 Bear:
     _id: ObjectId
+    animal_type: "bear"
     likes_honey: Bool
 
 Address: Str

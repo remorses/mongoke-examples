@@ -8,6 +8,10 @@ types:
         collection: zoos
     Animal:
         collection: animals
+        disambiguations:
+            Tiger: "'animal_type' in x and x['animal_type'] == 'tiger'"
+            Bear: "'animal_type' in x and x['animal_type'] == 'bear'"
+            Panthera: "'animal_type' in x and x['animal_type'] == 'panthera'"
     Tiger:
         collection: animals
         exposed: false
