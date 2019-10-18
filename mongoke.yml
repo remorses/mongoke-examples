@@ -1,0 +1,23 @@
+# ./mongoke.yml
+skema: |
+    User:
+        _id: ObjectId
+        username: Str
+        email: Str
+    BlogPost:
+        _id: ObjectId
+        author_id: ObjectId
+        content: Str
+
+types:
+    User:
+        collection: users
+    BlogPost:
+        collection: posts
+relations:
+    -   field: posts
+        from: User
+        to: BlogPost
+        relation_type: to_many
+        where: {}
+            # author_id: ${{ parent['_id'] }}

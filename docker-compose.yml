@@ -6,12 +6,18 @@ services:
         ports:
             - 8090:80
         image: mongoke/mongoke:latest
-        command: /conf.yml
         environment: 
+            - DB_URL=mongodb://mongo/db
             - PYTHONUNBUFFERED=1
         volumes: 
-            - ./${config}:/conf.yml
-            - ./domain.skema:/domain.skema
+            - ./mongoke.yml:/conf.yml
+            # - ./domain.skema:/domain.skema
+    populate-db:
+        image: mongoke/populate-mongo
+        volumes:
+            - ./mongoke.yml/:/conf.yml
+        environment:
+            - DB_URL=mongodb://mongo/db
     mongo:
         ports:
             - 27017:27017
