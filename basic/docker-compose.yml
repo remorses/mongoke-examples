@@ -8,7 +8,6 @@ services:
         image: mongoke/mongoke:latest
         environment: 
             - DB_URL=mongodb://mongo/db
-            - PYTHONUNBUFFERED=1
         volumes: 
             - ./mongoke.yml:/conf.yml
             # - ./domain.skema:/domain.skema
