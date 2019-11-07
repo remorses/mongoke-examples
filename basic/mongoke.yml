@@ -1,14 +1,17 @@
 # ./mongoke.yml
-skema: |
-    User:
-        _id: ObjectId
-        username: Str
-        email: Str
-    BlogPost:
+schema: |
+    type BlogPost {
         _id: ObjectId
         author_id: ObjectId
-        title: Str
-        content: Str
+        title: String
+        content: String
+    }
+
+    type User {
+        _id: ObjectId
+        username: String
+        email: String
+    }
 
 types:
     User:

@@ -11,13 +11,13 @@ services:
             - GRAPHIQL_DEFAULT_QUERY_FILE_PATH=/queries.graphql
         volumes: 
             - ./mongoke.yml:/conf.yml
-            - ./schema.skema:/schema.skema
+            - ./schema.graphql:/schema.graphql
             - ./queries.graphql:/queries.graphql
     populate-db:
         image: mongoke/populate-mongo
         volumes:
             - ./mongoke.yml:/conf.yml
-            - ./schema.skema:/schema.skema
+            - ./schema.graphql:/schema.graphql
         environment:
             - DB_URL=mongodb://mongo/db
     mongo:

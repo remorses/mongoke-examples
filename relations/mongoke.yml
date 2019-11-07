@@ -1,6 +1,6 @@
 # ./mongoke.yml
 
-skema_path: ./schema.skema
+schema_path: ./schema.graphql
 
 
 types:
